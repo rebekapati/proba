@@ -1,1 +1,1 @@
-# szoftech
+# szoftech gyakok
