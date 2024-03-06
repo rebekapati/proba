@@ -12,6 +12,7 @@ namespace Fibonacci
             /*Button név = new Button(); //new()
             név.Text = ":)";
             Controls.Add(név);*/
+            //git változtatás próba
 
             List<Sor> lista = new List<Sor>();
 
