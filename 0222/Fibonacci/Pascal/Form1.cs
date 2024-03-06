@@ -14,14 +14,13 @@ namespace Pascal
             {
                 for (int oszlop = 0; oszlop < sor + 1; oszlop++)
                 {
-                    Button button=new Button();
+                    Button button = new Button();
                     button.Width = m;
                     button.Height = m;
                     button.Left = oszlop * m;
                     button.Top = sor * m;
                     int x = Faktoriális(sor) / (Faktoriális(oszlop) * Faktoriális(sor - oszlop));
                     button.Text = x.ToString();
-
                     Controls.Add(button);
                 }
             }
@@ -30,7 +29,7 @@ namespace Pascal
         int Faktoriális(int n) //ctrl k d > automata formázás
         {
             if (n == 0) return 1;
-            return n * Faktoriális(n-1);
+            return n * Faktoriális(n - 1);
         }
     }
 }

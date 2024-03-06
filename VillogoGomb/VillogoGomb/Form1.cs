@@ -14,15 +14,15 @@ namespace VillogoGomb
             {
                 for (int oszlop = 0; oszlop < 10; oszlop++)
                 {
-                    SzámolóGomb szg = new SzámolóGomb();
-                    szg.Height = méret;
-                    szg.Width = méret;
-                    szg.Left = oszlop * méret;
+                    Probagomb gomb = new Probagomb();
+                    gomb.Height = méret;
+                    gomb.Width = méret;
+                    gomb.Left = oszlop * méret;
                     //ClientRectangle.Width / 2 - méret / 2; //gomb középre, bal felsõ saroktól számítja ezért a kivonás
-                    szg.Top = sor * méret;
+                    gomb.Top = sor * méret;
                         //ClientRectangle.Height / 2 - méret / 2;
                     //b.Text = ((sor+1) + (oszlop+1)).ToString();
-                    Controls.Add(szg);
+                    Controls.Add(gomb);
                 }
             }
         }

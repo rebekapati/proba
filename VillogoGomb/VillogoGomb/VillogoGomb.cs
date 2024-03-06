@@ -18,6 +18,7 @@ namespace VillogoGomb
             t.Tick += T_Tick;
         }
 
+
         private void T_Tick(object? sender, EventArgs e)
         {
             BackColor = SystemColors.ButtonFace;

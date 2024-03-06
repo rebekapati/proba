@@ -28,5 +28,6 @@ namespace VillogoGomb
             }
             Text = szám.ToString();
         }
+        
     }
 }

@@ -41,7 +41,7 @@ namespace KamatSzmamitas
                 //sorok.Add(újSor);
                 
                 ExtraSor extra = new ExtraSor();
-                sorok.Add(ExtraSor);
+                sorok.Add(extra);
                 extra.Hónap = hónap;
                 extra.Hátralék = hátralék;
                 extra.KummuláltBefizetés = költség;
