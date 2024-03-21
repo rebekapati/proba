@@ -10,7 +10,9 @@ namespace KígyósJáték
 
         int lépésszám;
 
-        int hossz = 5;
+        int hossz = 3;
+
+        List<KígyóElem> kígyó = new List<KígyóElem>(); //mérgek és almák
 
         public Form1()
         {
@@ -21,19 +23,11 @@ namespace KígyósJáték
         private void Form1_Load(object sender, EventArgs e)
         {
             List<string> list = new List<string>();
-            List<KígyóElem> kígyó = new List<KígyóElem>(); //mérgek és almák
 
             for (int i = 0; i < list.Count; i++)
             {
 
             }
-
-            foreach (string item in list)
-            {
-
-            }
-
-
         }
 
         private void timer1_Tick(object sender, EventArgs e)
@@ -43,11 +37,11 @@ namespace KígyósJáték
             //Fejnövesztés
             fej_x += irány_x * KígyóElem.Méret;
             fej_y += irány_y * KígyóElem.Méret;
-
             KígyóElem ke = new KígyóElem();
             kígyó.Add(ke); //Amikor új fejet neveztünk a kígyónak, azt beletesszük a `kígyó` listába is ..
             Controls.Add(ke); //.. és az űrlap vezérlőinek a listájába is
 
+            /*
             foreach (KígyóElem item in Controls)
             {
                 //Ha van már valami ott, ahova az új fejet tenném, vége a játéknak
@@ -56,23 +50,45 @@ namespace KígyósJáték
                     timer1.Enabled = false;
                     return;
                 }
+            }*/
+
+            foreach (object item in Controls)
+            {
+                if (item is KígyóElem)
+                {
+                    KígyóElem k = (KígyóElem)item;
+
+                    if (k.Top == fej_y && k.Left == fej_x)
+                    {
+                        timer1.Enabled = false;
+                        return;
+                    }
+                }
             }
 
             KígyóElem ÚjFej = new KígyóElem();
             ÚjFej.Top = fej_y;
             ÚjFej.Left = fej_x;
             Controls.Add(ÚjFej);
+            kígyó.Add(ÚjFej);
 
-            //másszon a kígyó
+            /*másszon a kígyó
             if (Controls.Count > hossz)
             {
-                //KígyóElem levágandó = kígyó[0];
                 Controls.RemoveAt(0);
+            }*/
+
+            //Farokvágás
+            if (kígyó.Count > hossz)
+            {
+                KígyóElem levágandó = kígyó[0];
+                kígyó.RemoveAt(0);
+                Controls.Remove(levágandó);
             }
 
             if (lépésszám % 2 == 0)
             {
-                ÚjFej.BackColor = Color.Yellow;
+                ÚjFej.BackColor = Color.Black;
             }
         }
 
