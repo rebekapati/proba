@@ -11,7 +11,7 @@ namespace KígyósJáték
     {
         System.Windows.Forms.Timer t = new System.Windows.Forms.Timer();
 
-        public static int Méret = 20;
+        public static int Méret = 20; //
 
         public KígyóElem()
         {
