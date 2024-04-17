@@ -6,14 +6,13 @@ namespace FutoVersenyzok
 {
     public partial class Form1 : Form
     {
-        BindingList<Versenyzõ> adatok = new BindingList<Versenyzõ>();
+        BindingList<Versenyzõ> adatok = new BindingList<Versenyzõ>(); //osztályszinten hogy az összes metódusban látszódjon
 
         public Form1()
         {
             InitializeComponent();
-            versenyzõBindingSource.DataSource = adatok;
             dataGridView1.DataSource = versenyzõBindingSource;
-
+            versenyzõBindingSource.DataSource = adatok;
         }
 
         private void Form1_Load(object sender, EventArgs e)
@@ -21,12 +20,12 @@ namespace FutoVersenyzok
 
         }
 
-        private void ButtonOpen_Click(object sender, EventArgs e)
+        private void ButtonOpen_Click(object sender, EventArgs e) //--FÁJLBEOLVASÁS
         {
-            try
+            try // a fájlmûveletek a reményrõl szólnak
             {
                 StreamReader sr = new StreamReader("futoversenyzok.csv");
-                CsvReader csv = new CsvReader(sr, CultureInfo.InvariantCulture);
+                CsvReader csv = new CsvReader(sr, CultureInfo.InvariantCulture); // a zh nem az a pont ahol az ember innovál az életben
                 var tömb = csv.GetRecords<Versenyzõ>();
                 foreach (var item in tömb)
                 {
@@ -35,19 +34,18 @@ namespace FutoVersenyzok
 
                 sr.Close();
             }
-            catch (Exception ex)
+            catch (Exception ex) // ex objektum átvétele, nem automatikus
             {
                 MessageBox.Show(ex.Message);
             }
         }
 
-        private void ButtonSave_Click(object sender, EventArgs e)
+        private void ButtonSave_Click(object sender, EventArgs e) //--MENTÉS
         {
-            try
+            SaveFileDialog saveFileDialog = new SaveFileDialog();
+            if (saveFileDialog.ShowDialog() == DialogResult.OK) //blokkoló hívás
             {
-                SaveFileDialog saveFileDialog = new SaveFileDialog();
-
-                if (saveFileDialog.ShowDialog() == DialogResult.OK)
+                try
                 {
                     StreamWriter sw = new StreamWriter(saveFileDialog.FileName);
                     CsvWriter csv = new CsvWriter(sw, CultureInfo.InvariantCulture);
@@ -55,14 +53,14 @@ namespace FutoVersenyzok
 
                     sw.Close();
                 }
-            }
-            catch (Exception ex)
-            {
-                MessageBox.Show(ex.Message);
+                catch (Exception ex)
+                {
+                    MessageBox.Show(ex.Message);
+                }
             }
         }
 
-        private void ButtonDelete_Click(object sender, EventArgs e)
+        private void ButtonDelete_Click(object sender, EventArgs e) //--SORTÖRLÉS
         {
             if (versenyzõBindingSource.Current == null)
             {
@@ -75,7 +73,7 @@ namespace FutoVersenyzok
             }
         }
 
-        private void ButtonAddNew_Click(object sender, EventArgs e)
+        private void ButtonAddNew_Click(object sender, EventArgs e) //--ÚJSOR
         {
             FormAddNew formAddNew = new FormAddNew();
 
