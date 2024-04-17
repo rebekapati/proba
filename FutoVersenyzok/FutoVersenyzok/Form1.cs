@@ -111,8 +111,9 @@ namespace FutoVersenyzok
                     leggyorsabb = item.Nev;
                 }
 
-                double átlag = összeg / adatok.Count(); //vlm nem mükszik
+                //double átlag = összeg / adatok.Count(); //vlm nem mükszik
             }
+            double átlag = összeg / adatok.Count(); //vlm nem mükszik megoldás: ide kell tenni. nem foreachen belülre, mert az akkor mndig lefut. itt csak egyszer kell szamolni atlagot
 
             MessageBox.Show($"A legjobb idõ {minimum}");
         }
