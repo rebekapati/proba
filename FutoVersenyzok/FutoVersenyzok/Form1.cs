@@ -115,7 +115,8 @@ namespace FutoVersenyzok
             }
             double átlag = összeg / adatok.Count(); //vlm nem mükszik megoldás: ide kell tenni. nem foreachen belülre, mert az akkor mndig lefut. itt csak egyszer kell szamolni atlagot
 
-            MessageBox.Show($"A legjobb idõ {minimum}");
+            MessageBox.Show($"{darab} versenyzõ érkezett Amerikából.");
+            MessageBox.Show($"A legjobb idõt {leggyorsabb} futotta.");
         }
     }
 }
