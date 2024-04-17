@@ -6,15 +6,15 @@ using System.Threading.Tasks;
 
 namespace FutoVersenyzok
 {
-    public class Versenyző
+    public class Versenyző //public!!!
     {
         //VersenyzoID,Nev,Nemzetiseg,EredmenyPerc,Kategoria
 
         public int VersenyzoID { get; set; }
-        public string Nev { get; set; }
-        public string Nemzetiseg { get; set; }
-        public int EredmenyPerc { get; set; }
-        public string Kategoria { get; set; }
+        public string Nev { get; set; } = string.Empty; //megszűnik a zöld aláhúzás
+        public string Nemzetiseg { get; set; } = string.Empty;
+        public double EredmenyPerc { get; set; }
+        public string Kategoria { get; set; } = string.Empty;
 
     }
 }
