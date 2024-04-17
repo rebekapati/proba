@@ -11,7 +11,7 @@ namespace FutoVersenyzok
         public Form1()
         {
             InitializeComponent();
-            dataGridView1.DataSource = versenyzõBindingSource;
+            dataGridView1.DataSource = versenyzõBindingSource; // légyszi zh-n plíz ne
             versenyzõBindingSource.DataSource = adatok;
         }
 
@@ -62,10 +62,10 @@ namespace FutoVersenyzok
 
         private void ButtonDelete_Click(object sender, EventArgs e) //--SORTÖRLÉS
         {
-            if (versenyzõBindingSource.Current == null)
-            {
+            if (versenyzõBindingSource.Current == null) return;
+            /*{
                 MessageBox.Show("Hiba történt, nincs kijelölt sor!", "Hiba", MessageBoxButtons.OK);
-            }
+            }*/
 
             if (MessageBox.Show("Biztos benne?", "Törlés", MessageBoxButtons.YesNo) == DialogResult.Yes)
             {
@@ -75,12 +75,46 @@ namespace FutoVersenyzok
 
         private void ButtonAddNew_Click(object sender, EventArgs e) //--ÚJSOR
         {
-            FormAddNew formAddNew = new FormAddNew();
+            FormAddNew formAddNew = new FormAddNew(); //lepéldányosítom
+
+            //formAddNew.ÚjVersenyzõ = versenyzõBindingSource.Current as Versenyzõ; nem story
 
             if (formAddNew.ShowDialog() == DialogResult.OK) //addig nem enged vissza és mûködnek a gombok <> .Show()
             {
-
+                versenyzõBindingSource.Add(formAddNew.ÚjVersenyzõ);
             }
+        }
+
+        private void ButtonCalculate_Click(object sender, EventArgs e)
+        {
+            double összeg = 0;
+            double összUSA = 0;
+            int darab = 0;
+
+            double minimum = double.PositiveInfinity;
+
+            string leggyorsabb = string.Empty;
+
+            foreach (var item in adatok)
+            {
+                összeg += item.EredmenyPerc;
+
+                if (item.Nemzetiseg == "USA")
+                {
+                    összUSA += item.EredmenyPerc;
+                    darab++;
+                }
+
+                if (item.EredmenyPerc < minimum)
+                {
+                    minimum = item.EredmenyPerc;
+                    leggyorsabb = item.Nev;
+                }
+
+                double átlag = összeg / adatok.Count(); //vlm nem mükszik
+            }
+
+            MessageBox.Show($"A legjobb idõ {minimum}");
         }
     }
 }

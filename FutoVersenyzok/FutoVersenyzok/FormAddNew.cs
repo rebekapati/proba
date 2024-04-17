@@ -12,14 +12,16 @@ namespace FutoVersenyzok
 {
     public partial class FormAddNew : Form
     {
+        public Versenyző ÚjVersenyző = new Versenyző();
 
         public FormAddNew()
         {
             InitializeComponent();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void FormAddNew_Load(object sender, EventArgs e)
         {
+            versenyzőBindingSource.DataSource = ÚjVersenyző;
         }
     }
 }

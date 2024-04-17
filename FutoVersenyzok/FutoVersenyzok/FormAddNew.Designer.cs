@@ -32,7 +32,7 @@
             button1 = new Button();
             button2 = new Button();
             textBox1 = new TextBox();
-            bindingSource1 = new BindingSource(components);
+            versenyzőBindingSource = new BindingSource(components);
             textBox6 = new TextBox();
             textBox3 = new TextBox();
             textBox8 = new TextBox();
@@ -42,25 +42,24 @@
             label3 = new Label();
             label4 = new Label();
             label5 = new Label();
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)versenyzőBindingSource).BeginInit();
             SuspendLayout();
             // 
             // button1
             // 
             button1.DialogResult = DialogResult.OK;
-            button1.Location = new Point(305, 605);
+            button1.Location = new Point(323, 526);
             button1.Margin = new Padding(3, 4, 3, 4);
             button1.Name = "button1";
             button1.Size = new Size(86, 31);
             button1.TabIndex = 0;
             button1.Text = "&OK";
             button1.UseVisualStyleBackColor = true;
-            button1.Click += button1_Click;
             // 
             // button2
             // 
             button2.DialogResult = DialogResult.Cancel;
-            button2.Location = new Point(213, 605);
+            button2.Location = new Point(231, 526);
             button2.Margin = new Padding(3, 4, 3, 4);
             button2.Name = "button2";
             button2.Size = new Size(86, 31);
@@ -70,21 +69,21 @@
             // 
             // textBox1
             // 
-            textBox1.DataBindings.Add(new Binding("Text", bindingSource1, "VersenyzoID", true));
-            textBox1.Location = new Point(41, 112);
+            textBox1.DataBindings.Add(new Binding("Text", versenyzőBindingSource, "VersenyzoID", true));
+            textBox1.Location = new Point(34, 59);
             textBox1.Margin = new Padding(3, 4, 3, 4);
             textBox1.Name = "textBox1";
             textBox1.Size = new Size(274, 27);
             textBox1.TabIndex = 2;
             // 
-            // bindingSource1
+            // versenyzőBindingSource
             // 
-            bindingSource1.DataSource = typeof(Versenyző);
+            versenyzőBindingSource.DataSource = typeof(Versenyző);
             // 
             // textBox6
             // 
-            textBox6.DataBindings.Add(new Binding("Text", bindingSource1, "Nev", true));
-            textBox6.Location = new Point(41, 212);
+            textBox6.DataBindings.Add(new Binding("Text", versenyzőBindingSource, "Nev", true));
+            textBox6.Location = new Point(34, 159);
             textBox6.Margin = new Padding(3, 4, 3, 4);
             textBox6.Name = "textBox6";
             textBox6.Size = new Size(274, 27);
@@ -92,8 +91,8 @@
             // 
             // textBox3
             // 
-            textBox3.DataBindings.Add(new Binding("Text", bindingSource1, "Nemzetiseg", true));
-            textBox3.Location = new Point(41, 319);
+            textBox3.DataBindings.Add(new Binding("Text", versenyzőBindingSource, "Nemzetiseg", true));
+            textBox3.Location = new Point(34, 266);
             textBox3.Margin = new Padding(3, 4, 3, 4);
             textBox3.Name = "textBox3";
             textBox3.Size = new Size(274, 27);
@@ -101,8 +100,8 @@
             // 
             // textBox8
             // 
-            textBox8.DataBindings.Add(new Binding("Text", bindingSource1, "EredmenyPerc", true));
-            textBox8.Location = new Point(41, 419);
+            textBox8.DataBindings.Add(new Binding("Text", versenyzőBindingSource, "EredmenyPerc", true));
+            textBox8.Location = new Point(34, 366);
             textBox8.Margin = new Padding(3, 4, 3, 4);
             textBox8.Name = "textBox8";
             textBox8.Size = new Size(274, 27);
@@ -110,8 +109,8 @@
             // 
             // textBox10
             // 
-            textBox10.DataBindings.Add(new Binding("Text", bindingSource1, "Kategoria", true));
-            textBox10.Location = new Point(41, 523);
+            textBox10.DataBindings.Add(new Binding("Text", versenyzőBindingSource, "Kategoria", true));
+            textBox10.Location = new Point(34, 470);
             textBox10.Margin = new Padding(3, 4, 3, 4);
             textBox10.Name = "textBox10";
             textBox10.Size = new Size(274, 27);
@@ -120,7 +119,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(41, 75);
+            label1.Location = new Point(34, 22);
             label1.Name = "label1";
             label1.Size = new Size(156, 20);
             label1.TabIndex = 14;
@@ -129,7 +128,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(41, 176);
+            label2.Location = new Point(34, 123);
             label2.Name = "label2";
             label2.Size = new Size(35, 20);
             label2.TabIndex = 15;
@@ -138,7 +137,7 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(41, 283);
+            label3.Location = new Point(34, 230);
             label3.Name = "label3";
             label3.Size = new Size(88, 20);
             label3.TabIndex = 16;
@@ -147,7 +146,7 @@
             // label4
             // 
             label4.AutoSize = true;
-            label4.Location = new Point(41, 384);
+            label4.Location = new Point(34, 331);
             label4.Name = "label4";
             label4.Size = new Size(75, 20);
             label4.TabIndex = 17;
@@ -156,7 +155,7 @@
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(41, 489);
+            label5.Location = new Point(34, 436);
             label5.Name = "label5";
             label5.Size = new Size(74, 20);
             label5.TabIndex = 18;
@@ -166,7 +165,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(421, 652);
+            ClientSize = new Size(421, 564);
             Controls.Add(label5);
             Controls.Add(label4);
             Controls.Add(label3);
@@ -183,7 +182,8 @@
             Margin = new Padding(3, 4, 3, 4);
             Name = "FormAddNew";
             Text = "FormAddNew";
-            ((System.ComponentModel.ISupportInitialize)bindingSource1).EndInit();
+            Load += FormAddNew_Load;
+            ((System.ComponentModel.ISupportInitialize)versenyzőBindingSource).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -197,11 +197,11 @@
         private TextBox textBox3;
         private TextBox textBox8;
         private TextBox textBox10;
-        private BindingSource bindingSource1;
         private Label label1;
         private Label label2;
         private Label label3;
         private Label label4;
         private Label label5;
+        private BindingSource versenyzőBindingSource;
     }
 }

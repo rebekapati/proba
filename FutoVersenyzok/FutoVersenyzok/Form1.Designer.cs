@@ -40,6 +40,7 @@
             ButtonSave = new Button();
             ButtonDelete = new Button();
             ButtonAddNew = new Button();
+            ButtonCalculate = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)versenyzőBindingSource).BeginInit();
             SuspendLayout();
@@ -50,41 +51,53 @@
             dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dataGridView1.Columns.AddRange(new DataGridViewColumn[] { versenyzoIDDataGridViewTextBoxColumn, nevDataGridViewTextBoxColumn, nemzetisegDataGridViewTextBoxColumn, eredmenyPercDataGridViewTextBoxColumn, kategoriaDataGridViewTextBoxColumn });
             dataGridView1.DataSource = versenyzőBindingSource;
-            dataGridView1.Location = new Point(12, 186);
+            dataGridView1.Location = new Point(14, 248);
+            dataGridView1.Margin = new Padding(3, 4, 3, 4);
             dataGridView1.Name = "dataGridView1";
+            dataGridView1.RowHeadersWidth = 51;
             dataGridView1.RowTemplate.Height = 25;
-            dataGridView1.Size = new Size(766, 252);
+            dataGridView1.Size = new Size(875, 336);
             dataGridView1.TabIndex = 0;
             // 
             // versenyzoIDDataGridViewTextBoxColumn
             // 
             versenyzoIDDataGridViewTextBoxColumn.DataPropertyName = "VersenyzoID";
             versenyzoIDDataGridViewTextBoxColumn.HeaderText = "VersenyzoID";
+            versenyzoIDDataGridViewTextBoxColumn.MinimumWidth = 6;
             versenyzoIDDataGridViewTextBoxColumn.Name = "versenyzoIDDataGridViewTextBoxColumn";
+            versenyzoIDDataGridViewTextBoxColumn.Width = 125;
             // 
             // nevDataGridViewTextBoxColumn
             // 
             nevDataGridViewTextBoxColumn.DataPropertyName = "Nev";
             nevDataGridViewTextBoxColumn.HeaderText = "Nev";
+            nevDataGridViewTextBoxColumn.MinimumWidth = 6;
             nevDataGridViewTextBoxColumn.Name = "nevDataGridViewTextBoxColumn";
+            nevDataGridViewTextBoxColumn.Width = 125;
             // 
             // nemzetisegDataGridViewTextBoxColumn
             // 
             nemzetisegDataGridViewTextBoxColumn.DataPropertyName = "Nemzetiseg";
             nemzetisegDataGridViewTextBoxColumn.HeaderText = "Nemzetiseg";
+            nemzetisegDataGridViewTextBoxColumn.MinimumWidth = 6;
             nemzetisegDataGridViewTextBoxColumn.Name = "nemzetisegDataGridViewTextBoxColumn";
+            nemzetisegDataGridViewTextBoxColumn.Width = 125;
             // 
             // eredmenyPercDataGridViewTextBoxColumn
             // 
             eredmenyPercDataGridViewTextBoxColumn.DataPropertyName = "EredmenyPerc";
             eredmenyPercDataGridViewTextBoxColumn.HeaderText = "EredmenyPerc";
+            eredmenyPercDataGridViewTextBoxColumn.MinimumWidth = 6;
             eredmenyPercDataGridViewTextBoxColumn.Name = "eredmenyPercDataGridViewTextBoxColumn";
+            eredmenyPercDataGridViewTextBoxColumn.Width = 125;
             // 
             // kategoriaDataGridViewTextBoxColumn
             // 
             kategoriaDataGridViewTextBoxColumn.DataPropertyName = "Kategoria";
             kategoriaDataGridViewTextBoxColumn.HeaderText = "Kategoria";
+            kategoriaDataGridViewTextBoxColumn.MinimumWidth = 6;
             kategoriaDataGridViewTextBoxColumn.Name = "kategoriaDataGridViewTextBoxColumn";
+            kategoriaDataGridViewTextBoxColumn.Width = 125;
             // 
             // versenyzőBindingSource
             // 
@@ -92,9 +105,10 @@
             // 
             // ButtonOpen
             // 
-            ButtonOpen.Location = new Point(668, 27);
+            ButtonOpen.Location = new Point(763, 36);
+            ButtonOpen.Margin = new Padding(3, 4, 3, 4);
             ButtonOpen.Name = "ButtonOpen";
-            ButtonOpen.Size = new Size(110, 38);
+            ButtonOpen.Size = new Size(126, 51);
             ButtonOpen.TabIndex = 1;
             ButtonOpen.Text = "Megnyitás";
             ButtonOpen.UseVisualStyleBackColor = true;
@@ -102,9 +116,10 @@
             // 
             // ButtonSave
             // 
-            ButtonSave.Location = new Point(668, 85);
+            ButtonSave.Location = new Point(763, 113);
+            ButtonSave.Margin = new Padding(3, 4, 3, 4);
             ButtonSave.Name = "ButtonSave";
-            ButtonSave.Size = new Size(110, 41);
+            ButtonSave.Size = new Size(126, 55);
             ButtonSave.TabIndex = 2;
             ButtonSave.Text = "Mentés";
             ButtonSave.UseVisualStyleBackColor = true;
@@ -112,9 +127,10 @@
             // 
             // ButtonDelete
             // 
-            ButtonDelete.Location = new Point(12, 27);
+            ButtonDelete.Location = new Point(14, 36);
+            ButtonDelete.Margin = new Padding(3, 4, 3, 4);
             ButtonDelete.Name = "ButtonDelete";
-            ButtonDelete.Size = new Size(116, 45);
+            ButtonDelete.Size = new Size(133, 60);
             ButtonDelete.TabIndex = 3;
             ButtonDelete.Text = "Törlés";
             ButtonDelete.UseVisualStyleBackColor = true;
@@ -122,24 +138,37 @@
             // 
             // ButtonAddNew
             // 
-            ButtonAddNew.Location = new Point(12, 85);
+            ButtonAddNew.Location = new Point(14, 113);
+            ButtonAddNew.Margin = new Padding(3, 4, 3, 4);
             ButtonAddNew.Name = "ButtonAddNew";
-            ButtonAddNew.Size = new Size(116, 45);
+            ButtonAddNew.Size = new Size(133, 60);
             ButtonAddNew.TabIndex = 4;
             ButtonAddNew.Text = "Új";
             ButtonAddNew.UseVisualStyleBackColor = true;
             ButtonAddNew.Click += ButtonAddNew_Click;
             // 
+            // ButtonCalculate
+            // 
+            ButtonCalculate.Location = new Point(400, 183);
+            ButtonCalculate.Name = "ButtonCalculate";
+            ButtonCalculate.Size = new Size(94, 29);
+            ButtonCalculate.TabIndex = 5;
+            ButtonCalculate.Text = "Számítások";
+            ButtonCalculate.UseVisualStyleBackColor = true;
+            ButtonCalculate.Click += ButtonCalculate_Click;
+            // 
             // Form1
             // 
-            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            ClientSize = new Size(914, 600);
+            Controls.Add(ButtonCalculate);
             Controls.Add(ButtonAddNew);
             Controls.Add(ButtonDelete);
             Controls.Add(ButtonSave);
             Controls.Add(ButtonOpen);
             Controls.Add(dataGridView1);
+            Margin = new Padding(3, 4, 3, 4);
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;
@@ -161,5 +190,6 @@
         private DataGridViewTextBoxColumn kategoriaDataGridViewTextBoxColumn;
         private BindingSource versenyzőBindingSource;
         private Button ButtonAddNew;
+        private Button ButtonCalculate;
     }
 }
