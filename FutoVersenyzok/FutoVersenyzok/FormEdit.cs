@@ -12,7 +12,7 @@ namespace FutoVersenyzok
 {
     public partial class FormEdit : Form
     {
-        public Versenyző ÚjBelépő = new Versenyző();
+        public Versenyző versenyzo;
         public FormEdit()
         {
             InitializeComponent();
@@ -20,7 +20,7 @@ namespace FutoVersenyzok
 
         private void FormEdit_Load(object sender, EventArgs e)
         {
-            BindingSource1.DataSource = new Versenyző();
+            BindingSource1.DataSource = versenyzo;
         }
 
         private void buttonOK_Click(object sender, EventArgs e)

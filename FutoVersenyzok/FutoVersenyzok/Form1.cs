@@ -91,7 +91,7 @@ namespace FutoVersenyzok
 
             if (versenyzõBindingSource.Current is Versenyzõ)
             {
-                fe.ÚjBelépõ = versenyzõBindingSource.Current as Versenyzõ;
+                fe.versenyzo = versenyzõBindingSource.Current as Versenyzõ;
                 fe.Show();
             }
         }
