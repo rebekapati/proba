@@ -85,6 +85,17 @@ namespace FutoVersenyzok
             }
         }
 
+        private void ButtonEdit_Click(object sender, EventArgs e)
+        {
+            FormEdit fe = new FormEdit();
+
+            if (versenyzõBindingSource.Current is Versenyzõ)
+            {
+                fe.ÚjBelépõ = versenyzõBindingSource.Current as Versenyzõ;
+                fe.Show();
+            }
+        }
+
         private void ButtonCalculate_Click(object sender, EventArgs e)
         {
             double összeg = 0;
