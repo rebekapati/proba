@@ -34,7 +34,7 @@ namespace csillagterkep
                     continue;
                 }
 
-                if (Math.Sqrt(Math.Pow(star.X,2)+Math.Pow(star.Y,2))>1) //egységsugarú körön belül van-e
+                if (Math.Sqrt(Math.Pow(star.X, 2) + Math.Pow(star.Y, 2)) > 1) //egységsugarú körön belül van-e
                 {
                     continue;
                 }
@@ -44,7 +44,7 @@ namespace csillagterkep
                 float y = (float)(star.Y * nagyítás + cy);
                 double size = 20 * Math.Pow(10, star.Magnitude / -2.5);
 
-                g.FillEllipse(brush, x, y, (float)size,(float)size);
+                g.FillEllipse(brush, x, y, (float)size, (float)size);
             }
 
             var lines = context.ConstellationLines.ToList(); //memóriába kerülnek a conline-ok listába

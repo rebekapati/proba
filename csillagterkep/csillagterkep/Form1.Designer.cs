@@ -33,12 +33,14 @@
             // 
             // buttonOpen
             // 
+            buttonOpen.BackColor = Color.DarkSlateBlue;
+            buttonOpen.ForeColor = SystemColors.Control;
             buttonOpen.Location = new Point(713, 23);
             buttonOpen.Name = "buttonOpen";
             buttonOpen.Size = new Size(75, 23);
             buttonOpen.TabIndex = 0;
             buttonOpen.Text = "RAJZ";
-            buttonOpen.UseVisualStyleBackColor = true;
+            buttonOpen.UseVisualStyleBackColor = false;
             buttonOpen.Click += buttonOpen_Click;
             // 
             // Form1
