@@ -84,10 +84,7 @@ namespace Akasztófa_projekt
                 Gombok[i].Click += new EventHandler(MyButton_click);
                 Controls.Add(Gombok[i]);
             }
-
-            
         }
-
 
         private void MyButton_click(object sender, EventArgs e)
         {
@@ -101,13 +98,13 @@ namespace Akasztófa_projekt
             foreach (Button b in Gombok)
             {
                 this.Controls.Remove(b);
-                b.Dispose();
+                //b.Dispose();
             }
 
             adatokbetoltese();
         }
 
-        void ellenoriz()
+        private void ellenoriz()
         {
             tippekszama++;
             seged = "";
@@ -123,7 +120,11 @@ namespace Akasztófa_projekt
                 }
             }
 
-            if (közbeni == seged) hibapont++;
+            if (közbeni == seged)
+            {
+                hibapont++;
+                Form1_Paint();
+            }
 
             közbeni = seged;
             hibaszam.Text = Convert.ToString(hibapont);
@@ -141,7 +142,7 @@ namespace Akasztófa_projekt
         }
 
         Pen toll = new Pen(Color.Red, 1);
-        private void Form1_Paint(object sender, PaintEventArgs e)
+        private void Form1_Paint()
         {
             Graphics g = this.CreateGraphics();
             switch (hibapont)
@@ -174,6 +175,7 @@ namespace Akasztófa_projekt
                     break;
                 case 9:
                     g.DrawLine(toll, 750, 300, 800, 400);
+                    g.Clear(Color.White);
                     break;
             }
         }

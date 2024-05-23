@@ -50,7 +50,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(251, 65);
+            label1.Location = new Point(251, 42);
             label1.Name = "label1";
             label1.Size = new Size(63, 15);
             label1.TabIndex = 1;
@@ -58,7 +58,7 @@
             // 
             // feladvany
             // 
-            feladvany.Location = new Point(339, 62);
+            feladvany.Location = new Point(339, 39);
             feladvany.Name = "feladvany";
             feladvany.Size = new Size(248, 23);
             feladvany.TabIndex = 2;
@@ -66,7 +66,8 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(684, 65);
+            label2.ForeColor = Color.Red;
+            label2.Location = new Point(684, 42);
             label2.Name = "label2";
             label2.Size = new Size(77, 15);
             label2.TabIndex = 3;
@@ -74,7 +75,8 @@
             // 
             // hibaszam
             // 
-            hibaszam.Location = new Point(767, 62);
+            hibaszam.ForeColor = Color.Red;
+            hibaszam.Location = new Point(767, 39);
             hibaszam.Name = "hibaszam";
             hibaszam.Size = new Size(90, 23);
             hibaszam.TabIndex = 4;
